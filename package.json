@@ -1,0 +1,20 @@
+{
+  "name": "vintagemania",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maiwennbkh/Vmania.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maiwennbkh/Vmania/issues"
+  },
+  "homepage": "https://github.com/maiwennbkh/Vmania#readme"
+}
