@@ -2,52 +2,96 @@
     font-family: 'Figtree', sans-serif;
 }
 
+@mixin background-color {
+    background: rgb(96,210,103);
+    background: radial-gradient(circle, rgba(96,210,103,1) 0%, rgba(255,179,85,1) 100%);
+}
+
 body 
 {
-    margin: 10px;
+    margin: auto;
 }
-.header 
-{
+
+.sup-header {
+    background-color: black;
+    height: 50px;
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: orange;
+    &__title {
+        color: white;
+        padding-left: 20px;
+    }
+    &__social {
+        margin-left: 40%;
+        & i {
+            font-size: 2rem;
+            padding-right: 20px;
+            &.fa-brands.fa-facebook.facebook {
+                color: #3b5998;
+
+            }
+            &.fa-brands.fa-twitter.twitter {
+                color: #1DA1F2;
+
+            }
+            &.fa-brands.fa-instagram.insta {
+                background: linear-gradient(#8a3ab9, #4c68d7, #cd486b);
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            &.fa-brands.fa-pinterest.pinterest {
+                color: #E60023;
+
+            }   
+        }
+    }
+    &__form {
+        padding-right: 20px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include background-color;
     -webkit-box-shadow: 2px 5px 12px 5px grey;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    &__logo {
+        width: 130px;
+        height: 130px;
+        padding: 10px 10px;
+        margin-left: 10px;
+        &:hover {
+            transform: scale(1.1);
 
-.header__logo
-{
-    width: 150px;
-    height: 150px;
-   
-}
-
-
-
-.header__list
-{
-    list-style-type: none;
-    display: flex;
-    gap: 50px;
-    margin-right: 10px;
-}
-
-nav li 
-{
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 70%;
-    font-size: 1.5rem;
-}
-
-
-nav li:hover 
-{
-    transform: scale(1.35);
-    
+        }
+    }
+    &__menu {
+        margin-right: 10%;
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+        gap: 50px;
+        margin-right: 10px;
+        max-height: 20px;
+        & li {
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.5rem;
+                & a {
+                    text-decoration: none;
+                    color: black;
+                }
+            & i {
+                padding-right: 10px;
+            }
+        }
+    }   
 }
 
 .image_boutique 
@@ -57,53 +101,71 @@ nav li:hover
     padding-top: 40px;
 }
 
-.main 
-{
-    display: GRID;
-    place-items: center;
-}
-.entete 
-{
-    background-color: white;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 10px;
+
+.main__banner {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    & img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+        &.active {
+            z-index: 1;
+            opacity: 1;
+        }
+        &.inactive {
+            z-index: 0;
+            opacity: 0;
+        }
+    }
 }
 
-.entete i 
-{
-    font-size: 2rem;
-    padding-right: 20px;
-}
-.facebook
-{
-    color: #3b5998;
+.main-categories {
+    &__title {
+        margin-left: 30px;
+        padding-top: 30px;
+    }
+    &__card {
+        width: 300px;
+        height: 400px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 10px;
+        float: left;
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+        }
+        & img {
+            width: 100%;
+            height: 200px;
+        }
+        & h1 {
+            padding: 10px 20px;
+            font-size: 24px;
+            text-align: center;
+            background-color: lightgrey;
+        }
+        & p {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
 }
 
-.insta
-{
-    background: linear-gradient(#8a3ab9, #4c68d7, #cd486b);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.twitter
-{
-    color: #1DA1F2;
-}
-
-.pinterest 
-{
-    color: #E60023;
-}
+    
 .footer 
 {
     width: 100%;
-    background-color: orange;
     display: flex;
-
+    @include background-color;
 }
 .footer__logo
 {
@@ -139,3 +201,28 @@ footer li
 
 
 }
+
+#dropdownContent ul {
+    list-style-type: none; /* masque les puces de la liste */
+    margin: 0; /* supprime la marge autour de la liste */
+    padding: 0; /* supprime la marge intérieure de la liste */
+    position: relative;
+    z-index: 5;
+    opacity: 0.9;
+   
+  }
+  
+  #dropdownContent li {
+    background-color: lightgrey; /* couleur de fond des éléments de la liste */
+  }
+  
+  #dropdownContent li a {
+    display: block; /* affiche chaque lien sur une ligne séparée */
+    padding: 8px; /* ajoute de l'espace autour du texte des liens */
+    text-decoration: none; /* enlève le soulignement des liens */
+    color: black; /* couleur du texte des liens */
+  }
+  
+  #dropdownContent li a:hover {
+    background-color: darkgrey; /* couleur de fond lorsque l'utilisateur passe la souris sur un lien */
+  }

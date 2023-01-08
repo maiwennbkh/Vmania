@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,26 +14,69 @@
     <title>Vintage Mania</title>
 </head>
 <body>
-    <div class="entete">
-        <i class="fa-brands fa-instagram insta"></i>
-        <i class="fa-brands fa-facebook facebook"></i>
-        <i class="fa-brands fa-twitter twitter"></i>
-        <i class="fa-brands fa-pinterest pinterest"></i>
-        <i class="fa-brands fa-tiktok tiktok"></i>
+    <div class="sup-header">
+        <p class="sup-header__title">Vêtements et Accessoires vintage</p>
+        <div class="sup-header__social">
+            <i class="fa-brands fa-instagram insta"></i>
+            <i class="fa-brands fa-facebook facebook"></i>
+            <i class="fa-brands fa-twitter twitter"></i>
+            <i class="fa-brands fa-pinterest pinterest"></i>
+            <i class="fa-brands fa-tiktok tiktok"></i>
         </div>
+        <form class="sup-header__form">
+            <input type="text" name="search" placeholder="Rechercher...">
+            <button type="submit">Go</button>
+        </form>
+    </div>
+          
     <header class="header">
         <img src="images/LOGO-VINTAGE.png" class="header__logo">
         <nav class="header__menu">
             <ul class="header__list">
-                <li><i class="fa-sharp fa-solid fa-house house"></i></li>
-                <li>Catalogue</li>
-                <li>Contact</li>
+                <li><a href ="#"><i class="fa-sharp fa-solid fa-house house"></i>Accueil</a></li>
+                <li><a href ="#" id="dropdownLink">Catégories</a>
+                    <div id="dropdownContent" onmouseover="showDropdown()" onmouseout="hideDropdown()">
+                        <ul>
+                            <li><a href="#">Pulls vintage</a></li>
+                            <li><a href="#">Chemises</a></li>
+                            <li><a href="#">T-shirts</a></li>
+                            <li><a href="#">Pantalons</a></li>
+                            <li><a href="#">Vestes</a></li>
+                        </ul>     
+                    </div>
+                </li>
+                <li><a href ="#">À propos de nous</a></li>
+                <li><a href ="#">Contact</a></li>
             </ul>
-
         </nav>
     </header>
+
     <main class="main">
-        <img class="image_boutique"src="images/vintage_mania_paris.jpg" alt="boutique vintage mania">
+        <section class="main__banner">
+            <img src="images/nick-de-partee-5DLBoEX99Cs-unsplash.jpg" alt="Image 1" class="active">
+            <img src="images/elia-pellegrini-PyTZdnn0RNg-unsplash.jpg" alt="Image 2" class="inactive">
+            <img src="images/tessa-simpson-eTCogYz7kQE-unsplash.jpg" alt="Image 3" class="inactive">
+            <img src="images/vintage_mania_paris.jpg" alt="Image 4" class="inactive">
+        </section>
+
+        <section class="main-categories">
+            <h1 class="main-categories__title">Catégories</h1>
+            <div class="main-categories__card">
+                <img src="images/logo-vintage-mania.jpg" alt="Image 1">
+                <h1>Titre de la carte 1</h1>
+                <p>Description de la carte 1</p>
+            </div>
+            <div class="main-categories__card">
+                <img src="images/logo-vintage-mania.jpg" alt="Image 2">
+                <h1>Titre de la carte 2</h1>
+                <p>Description de la carte 2</p>
+            </div>
+            <div class="main-categories__card">
+                <img src="images/logo-vintage-mania.jpg" alt="Image 3">
+                <h1>Titre de la carte 3</h1>
+                <p>Description de la carte 3</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -42,12 +85,13 @@
             <p class="footer__adress">127 rue saint-Denis, 75001 Paris</p>
         </div>
         <ul class="footer__list">
-            <li>Home</li>
+            <li>Notre boutique</li>
             <li>Contact</li>
-            <li>Wishlist</li>
+            <li>Politique de confidentialité</li>
             <li>Mentions Légales</li>
         </ul>
     </footer>
     
+<script src="js/script.js"></script>
 </body>
 </html>
